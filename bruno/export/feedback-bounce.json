@@ -1,0 +1,356 @@
+{
+  "name": "feedback-bounce",
+  "version": "1",
+  "items": [
+    {
+      "type": "http",
+      "name": "auth",
+      "seq": 1,
+      "request": {
+        "url": "{{BASE_URL}}/auth",
+        "method": "POST",
+        "headers": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n    \"email\": \"user@example.edu\",\n    \"password\": \"password\",\n    \"is_admin\": false\n}\n",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "auth": {
+          "mode": "none",
+          "basic": {
+            "username": "",
+            "password": ""
+          },
+          "bearer": {
+            "token": ""
+          }
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "query": []
+      }
+    },
+    {
+      "type": "http",
+      "name": "user-get",
+      "seq": 4,
+      "request": {
+        "url": "{{BASE_URL}}/user",
+        "method": "GET",
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "auth": {
+          "mode": "none",
+          "basic": {
+            "username": "",
+            "password": ""
+          },
+          "bearer": {
+            "token": ""
+          }
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "query": []
+      }
+    },
+    {
+      "type": "http",
+      "name": "user-create",
+      "seq": 2,
+      "request": {
+        "url": "{{BASE_URL}}/user",
+        "method": "POST",
+        "headers": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n    \"firstName\":\"John\",\n    \"lastName\": \"Doe\",\n    \"password\": \"foobar\",\n    \"email\": \"john.doe@example.com\"\n}\n",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "auth": {
+          "mode": "none",
+          "basic": {
+            "username": "",
+            "password": ""
+          },
+          "bearer": {
+            "token": ""
+          }
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "query": []
+      }
+    },
+    {
+      "type": "http",
+      "name": "question-get",
+      "seq": 3,
+      "request": {
+        "url": "{{BASE_URL}}/question?session_id=1",
+        "method": "GET",
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "auth": {
+          "mode": "none",
+          "basic": {
+            "username": "",
+            "password": ""
+          },
+          "bearer": {
+            "token": ""
+          }
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "query": [
+          {
+            "name": "session_id",
+            "value": "1",
+            "enabled": true
+          }
+        ]
+      }
+    },
+    {
+      "type": "http",
+      "name": "session-get",
+      "seq": 5,
+      "request": {
+        "url": "{{BASE_URL}}/session?teacher_id=1",
+        "method": "GET",
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "auth": {
+          "mode": "none",
+          "basic": {
+            "username": "",
+            "password": ""
+          },
+          "bearer": {
+            "token": ""
+          }
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "query": [
+          {
+            "name": "teacher_id",
+            "value": "1",
+            "enabled": true
+          }
+        ]
+      }
+    },
+    {
+      "type": "http",
+      "name": "answer-get",
+      "seq": 6,
+      "request": {
+        "url": "{{BASE_URL}}/answer?question_id=1",
+        "method": "GET",
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "auth": {
+          "mode": "none",
+          "basic": {
+            "username": "",
+            "password": ""
+          },
+          "bearer": {
+            "token": ""
+          }
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "query": [
+          {
+            "name": "question_id",
+            "value": "1",
+            "enabled": true
+          }
+        ]
+      }
+    },
+    {
+      "type": "http",
+      "name": "answer-create",
+      "seq": 8,
+      "request": {
+        "url": "{{BASE_URL}}/answer",
+        "method": "POST",
+        "headers": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n    \"question_id\": 1,\n    \"message\": \"This is the answer\",\n    \"responder\": \"8ad6253f-6f4c-4b1e-a617-70f3db74a72a\",\n    \"moment\": \"2023-10-02 10:02:50\"\n}\n",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "auth": {
+          "mode": "none",
+          "basic": {
+            "username": "",
+            "password": ""
+          },
+          "bearer": {
+            "token": ""
+          }
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "query": []
+      }
+    },
+    {
+      "type": "http",
+      "name": "user-delete",
+      "seq": 9,
+      "request": {
+        "url": "{{BASE_URL}}/user/:id",
+        "method": "DELETE",
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "auth": {
+          "mode": "none",
+          "basic": {
+            "username": "",
+            "password": ""
+          },
+          "bearer": {
+            "token": ""
+          }
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "query": []
+      }
+    },
+    {
+      "type": "http",
+      "name": "session-create",
+      "seq": 7,
+      "request": {
+        "url": "{{BASE_URL}}/session",
+        "method": "POST",
+        "headers": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n    \"teacher_id\": 1,\n    \"moment\": \"2023-04-21T14:30:56.000Z\"\n}\n",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "auth": {
+          "mode": "none",
+          "basic": {
+            "username": "",
+            "password": ""
+          },
+          "bearer": {
+            "token": ""
+          }
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "query": []
+      }
+    },
+    {
+      "type": "http",
+      "name": "question-create",
+      "seq": 10,
+      "request": {
+        "url": "{{BASE_URL}}/question",
+        "method": "POST",
+        "headers": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n    \"content\": \"Question?\",\n    \"answer_type\": 1,\n    \"theme\": 1,\n    \"session_id\": 1\n}\n",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "auth": {
+          "mode": "none",
+          "basic": {
+            "username": "",
+            "password": ""
+          },
+          "bearer": {
+            "token": ""
+          }
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "query": []
+      }
+    }
+  ],
+  "activeEnvironmentUid": "xOgEQ3dhf5LjIQwFBf2jF",
+  "environments": [
+    {
+      "variables": [
+        {
+          "name": "BASE_URL",
+          "value": "http://10.120.33.52:3000/api/v0",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        }
+      ],
+      "name": "Production"
+    },
+    {
+      "variables": [
+        {
+          "name": "BASE_URL",
+          "value": "http://localhost:3000/api/v0",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        }
+      ],
+      "name": "Dev"
+    }
+  ]
+}

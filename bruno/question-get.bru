@@ -1,0 +1,15 @@
+meta {
+  name: question-get
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{BASE_URL}}/question?session_id=1
+  body: none
+  auth: none
+}
+
+query {
+  session_id: 1
+}

@@ -1,0 +1,21 @@
+meta {
+  name: question-create
+  type: http
+  seq: 10
+}
+
+post {
+  url: {{BASE_URL}}/question
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "content": "Question?",
+      "answer_type": 1,
+      "theme": 1,
+      "session_id": 1
+  }
+  
+}

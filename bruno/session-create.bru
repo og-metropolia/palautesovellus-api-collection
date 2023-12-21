@@ -1,0 +1,19 @@
+meta {
+  name: session-create
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{BASE_URL}}/session
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "teacher_id": 1,
+      "moment": "2023-04-21T14:30:56.000Z"
+  }
+  
+}

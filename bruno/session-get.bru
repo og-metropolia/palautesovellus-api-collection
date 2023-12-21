@@ -1,0 +1,15 @@
+meta {
+  name: session-get
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{BASE_URL}}/session?teacher_id=1
+  body: none
+  auth: none
+}
+
+query {
+  teacher_id: 1
+}

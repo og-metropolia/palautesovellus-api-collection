@@ -1,0 +1,21 @@
+meta {
+  name: answer-create
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{BASE_URL}}/answer
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "question_id": 1,
+      "message": "This is the answer",
+      "responder": "8ad6253f-6f4c-4b1e-a617-70f3db74a72a",
+      "moment": "2023-10-02 10:02:50"
+  }
+  
+}
